@@ -1,0 +1,12 @@
+class Solution:
+    def leftRigthDifference(self, nums: List[int]) -> List[int]:
+        ls=[]
+        rs=[]
+        for i in range(len(nums)):
+            ls.append(sum(nums[:i]))
+            rs.append(sum(nums[::-1][:i]))
+        rs=rs[::-1]
+        res=[]
+        for i in range(len(nums)):
+            res.append(abs(ls[i]-rs[i]))
+        return res
