@@ -1,0 +1,10 @@
+class Solution:
+    def diStringMatch(self, S):
+        l = 0
+        r = len(S)
+        arr = []
+        for s in S:
+            arr.append(l if s == "I" else r)
+            l =  l + (s == "I")
+            r = r - (s == "D")
+        return arr + [l]
