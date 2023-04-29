@@ -1,0 +1,35 @@
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        k=nums.count(pivot)
+        res=[]
+        for i in nums:
+            if i < pivot:
+                res.append(i)
+        for i in range(k):
+            res.append(pivot)
+        for i in nums:
+            if i>pivot:
+                res.append(i)
+        return res
+        
+        ############################################################################################################################################################################
+        
+ class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        k=nums.count(pivot)
+        res=[]
+        res2=[]
+        for i in nums:
+            if i < pivot:
+                res.append(i)
+            elif i>pivot:
+                res2.append(i)
+            else:
+                pass
+
+        for i in range(k):
+            res.append(pivot)
+        
+        return res+res2
+        
+        
