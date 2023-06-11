@@ -1,0 +1,17 @@
+class Solution:
+    def sumDistance(self, nums: List[int], s: str, d: int) -> int:
+        for i,j in enumerate(s):
+            if j=="R":
+                nums[i]+=d
+            elif j=='L':
+                nums[i]-=d
+            else:
+                pass
+        nums.sort()
+        sum_=0
+        res=0
+        for i,j in enumerate(nums):
+            res+=j*i-sum_
+            sum_+=j
+        return res%(10**9+7)
+    
