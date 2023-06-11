@@ -1,0 +1,10 @@
+class Solution:
+    def findNonMinOrMax(self, nums: List[int]) -> int:
+        nums.sort()
+        nums.pop(0)
+        if nums:
+            nums.pop(-1)
+            if nums:
+                return nums[0]
+        return -1
+        
