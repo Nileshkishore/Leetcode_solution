@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        temp=[i for i in range(1,n+1)]
+        c=itertools.combinations(temp,k)
+        res=[]
+        for i in c:
+            res.append(list(i))
+        return res
