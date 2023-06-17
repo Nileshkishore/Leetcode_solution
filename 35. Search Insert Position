@@ -1,0 +1,26 @@
+approch 1:
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        l=0
+        h=len(nums)
+        if target>nums[h-1]:
+            return h
+        while l<=h:
+            mid=(l+h)//2
+            if nums[mid]==target:
+                return mid
+            if target<nums[mid]:
+                h=mid-1
+            else:
+                l=mid+1
+        return l
+        
+Approch 2:
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        nums.append(target)
+        nums.sort()
+        k=nums.index(target)
+        return k
