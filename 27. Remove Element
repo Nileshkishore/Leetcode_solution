@@ -1,0 +1,8 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        res=nums[:]
+        for i in res:
+            if val==i:
+                nums.remove(i)
+        return len(nums)
+
