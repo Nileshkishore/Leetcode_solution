@@ -1,0 +1,14 @@
+import  itertools
+import math
+class Solution:
+    def countBeautifulPairs(self, nums: List[int]) -> int:
+        c=itertools.combinations(nums,2)
+        count=0
+        for i in list(c):
+            s1=str(i[0])
+            s2=str(i[1])
+            if math.gcd(int(s1[0]),int(s2[-1]))==1:
+                count+=1
+        return count
+                
+        
