@@ -1,0 +1,25 @@
+class Solution:
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod=(10**9)+7
+        res=1
+        val=0
+        lis=list()
+        flag=False
+        count=0
+        for i in nums:
+            if i==1:
+                val+=1
+        if val<=1:
+            return val
+        for i in range(len(nums)):
+            if nums[i]==1 and flag:
+                if count>0:
+                    lis.append(count)
+                count=0
+            if nums[i] ==1 and flag==False:
+                flag=True
+            if nums[i]==0 and flag:
+                count+=1
+        for i in lis:
+            res=res*(i+1)%mod
+        return res
