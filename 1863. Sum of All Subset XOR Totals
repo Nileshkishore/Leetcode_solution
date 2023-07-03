@@ -1,0 +1,17 @@
+import itertools
+class Solution:
+    def subsetXORSum(self, nums: List[int]) -> int:
+        def xor_op(i):
+            sum=i[0]
+            for j in i[1:]:
+                sum^=j
+            return sum
+
+        li=list()
+        for i in range(1,len(nums)+1):
+            comb=list(itertools.combinations(nums,i))
+            li.extend(comb)
+        res=0
+        for i in li:
+            res+=xor_op(i)
+        return res
