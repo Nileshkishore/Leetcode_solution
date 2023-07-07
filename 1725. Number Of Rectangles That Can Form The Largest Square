@@ -1,0 +1,11 @@
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+        r=[]
+        ma=0
+        for i in rectangles:
+            j=min(i)
+            if ma<j:
+                ma=j
+            r.append(j)
+        
+        return r.count(ma) 
