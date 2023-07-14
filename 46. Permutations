@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        c=itertools.permutations(nums,len(nums))
+        res=[]
+        for i in c:
+            res.append(list(i))
+
+        return res
