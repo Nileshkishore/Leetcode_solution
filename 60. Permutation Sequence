@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def getPermutation(self, n: int, k: int) -> str:
+        li=[i+1 for i in range(n)]
+        per=list(itertools.permutations(li,n))
+        res=''
+        for i in per[k-1]:
+            res+=str(i)
+        return res
