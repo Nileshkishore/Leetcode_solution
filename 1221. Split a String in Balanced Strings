@@ -9,4 +9,5 @@ class Solution:
                 temp-=1
             if temp==0:
                 res+=1
+
         return res
