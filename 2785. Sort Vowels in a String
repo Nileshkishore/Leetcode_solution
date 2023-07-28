@@ -1,0 +1,14 @@
+class Solution:
+    def sortVowels(self, s: str) -> str:
+        temp=list()
+        for i in s:
+            if i in ['a','e','i','o','u','A','E','I','O','U']:
+                temp.append(i)
+        j=0
+        temp.sort()
+        print(temp)
+        for i in range(len(s)):
+            if s[i] in ['a','e','i','o','u','A','E','I','O','U']:
+                s=s[:i]+temp[j]+s[i+1:]
+                j+=1
+        return s
