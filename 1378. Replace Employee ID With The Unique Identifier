@@ -1,0 +1,3 @@
+# Write your MySQL query statement below
+select E.unique_id, j.name from EmployeeUNI E 
+right join Employees j on E.id=j.id;
