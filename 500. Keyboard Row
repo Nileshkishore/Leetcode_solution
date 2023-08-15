@@ -1,0 +1,30 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        res=[]
+        for i in words:
+            le=len(i)
+            if i[0].lower() in "qwertyuiop":
+                count=1
+                for j in i[1:]:
+                    if j.lower() in "qwertyuiop":
+                        count+=1
+                if count==le:
+                    res.append(i)
+            elif i[0].lower() in "asdfghjkl":
+                count=1
+                for j in i[1:]:
+                    if j.lower() in "asdfghjkl":
+                        count+=1
+                if count==le:
+                    res.append(i)
+            elif i[0].lower() in "zxcvbnm":
+                count=1
+                for j in i[1:]:
+                    if j.lower() in "zxcvbnm":
+                        count+=1
+                if count==le:
+                    res.append(i)
+
+            else:
+                pass
+        return res
