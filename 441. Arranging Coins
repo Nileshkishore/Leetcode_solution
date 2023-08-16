@@ -1,0 +1,11 @@
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        res=-1
+        count=1
+        while n>=0:
+            n-=count
+            count+=1
+            res+=1
+        return res
+
+
