@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def countPairs(self, nums: List[int], target: int) -> int:
+        comb=itertools.combinations(nums,2)
+        count=0
+        for i in comb:
+            if sum(i)<target:
+                count+=1
+        return count
