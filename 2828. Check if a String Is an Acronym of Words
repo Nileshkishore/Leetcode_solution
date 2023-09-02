@@ -1,0 +1,6 @@
+class Solution:
+    def isAcronym(self, words: List[str], s: str) -> bool:
+        res=''
+        for i in words:
+            res+=i[0]
+        return True if res==s else False
