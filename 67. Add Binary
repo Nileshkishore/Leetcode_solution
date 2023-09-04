@@ -1,0 +1,14 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        def ch(num):
+            res=0
+            j=0
+            num=num[::-1]
+            for i in num:
+                res+=int(i)*(2**j)
+                j+=1
+            return res        
+        a=ch(a)
+        b=ch(b)
+        su=a+b
+        return str(bin(su)[2:])
