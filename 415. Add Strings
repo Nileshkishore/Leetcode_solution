@@ -1,0 +1,23 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        d={"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"0":0,1:"1",2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9",0:"0"}
+        n1=0
+        j=0
+        num1=num1[::-1]
+        for i in num1:
+            n1+=d[i]*(10**j)
+            j+=1
+        n2=0
+        j=0
+        num2=num2[::-1]
+        for i in num2:
+            n2+=d[i]*(10**j)
+            j+=1
+        s=n1+n2
+        if s==0:
+            return "0"
+        res=""
+        while(s>=1):
+            res+=d[s%10]
+            s=s//10
+        return res[::-1]
