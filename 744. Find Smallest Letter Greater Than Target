@@ -1,0 +1,10 @@
+class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        res=[]
+        for i in letters:
+            if ord(target)<ord(i):
+                res.append(ord(i))
+        res.sort()
+        print(res)
+        return chr(res[0]) if res else letters[0]
+        
