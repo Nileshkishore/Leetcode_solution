@@ -1,0 +1,12 @@
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        def cont(num):
+            count=0
+            for i in num:
+                if i<0:
+                    count+=1
+            return count
+        count=0
+        for i in range(len(grid)):
+            count+=cont(grid[i])
+        return count
