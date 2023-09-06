@@ -1,0 +1,16 @@
+class Solution:
+    def checkXMatrix(self, grid: List[List[int]]) -> bool:
+        n=len(grid)
+        t=0
+        res=0
+        for i in range(n):
+            t+=sum(grid[i])
+            if grid[i][i]!=0 and grid[i][n-1-i]!=0:
+                res+= grid[i][i] + grid[i][n-1-i]
+            else:
+                return False
+        if n%2==1:
+            res-=grid[n//2][n//2]
+        if res==t:
+            return True
+        return False
