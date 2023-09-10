@@ -1,0 +1,6 @@
+class Solution:
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        res=[]
+        for i in nums:
+            res+=[j for j in range(i[0],i[-1]+1) if j not in res]
+        return len(res)
