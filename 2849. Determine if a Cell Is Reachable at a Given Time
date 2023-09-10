@@ -1,0 +1,7 @@
+import math
+class Solution:
+    def isReachableAtTime(self, sx: int, sy: int, fx: int, fy: int, t: int) -> bool:
+        if sx==fx and fy==sy: 
+            return False if t==1 else True
+        res=max(abs(sx-fx),abs(fy-sy))
+        return True if res<=t else False
