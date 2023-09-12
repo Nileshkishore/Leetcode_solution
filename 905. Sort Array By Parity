@@ -1,0 +1,7 @@
+class Solution:
+    def sortArrayByParity(self, nums: List[int]) -> List[int]:
+        if len(nums)==1:
+            return nums
+        ev=[i for i in nums if i%2==0]
+        od=[i for i in nums if i%2!=0]
+        return ev+od
