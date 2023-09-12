@@ -1,0 +1,14 @@
+class Solution:
+    def sortArrayByParityII(self, num: List[int]) -> List[int]:
+        eve=[i for i in num if i%2==0]
+        od=[i for i in num if i%2!=0]
+        e=0
+        o=0
+        for i in range(len(num)):
+            if i%2==0:
+                num[i]=eve[e]
+                e+=1
+            else:
+                num[i]=od[o]
+                o+=1
+        return num
