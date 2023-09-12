@@ -1,0 +1,17 @@
+class Solution:
+    def sortEvenOdd(self, num: List[int]) -> List[int]:
+        eve=[num[i] for i in range(len(num)) if i%2==0]
+        eve.sort()
+        od=[num[i] for i in range(len(num)) if i%2!=0]
+        od.sort()
+        od=od[::-1]
+        e=0
+        o=0
+        for i in range(len(num)):
+            if i%2==0:
+                num[i]=eve[e]
+                e+=1
+            else:
+                num[i]=od[o]
+                o+=1
+        return num
