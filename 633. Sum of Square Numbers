@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        k=int(math.sqrt(c))
+        for i in range(k+1):
+            j=math.sqrt(c-i*i)
+            if j == int(j):
+                return True
+        return False
