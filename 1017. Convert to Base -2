@@ -1,0 +1,11 @@
+class Solution:
+    def baseNeg2(self, n: int) -> str:
+        res=''
+        while(n!=0):
+            if n%-2 == 0:
+                res='0'+res
+                n=n//-2
+            else:
+                res='1'+res
+                n=(n-1)//-2
+        return '0' if res=='' else res
