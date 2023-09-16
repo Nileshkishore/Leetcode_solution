@@ -1,0 +1,9 @@
+class Solution:
+    def minimumRightShifts(self, nums: List[int]) -> int:
+        ind=nums.index(min(nums))
+        res=nums[ind:]+nums[:ind]
+        nums.sort()
+        for i in range(len(nums)):
+            if nums[i]!=res[i]:
+                return -1
+        return len(nums)-ind if ind!=0 else 0
