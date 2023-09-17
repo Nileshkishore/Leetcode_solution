@@ -1,0 +1,9 @@
+class Solution:
+    def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
+        n=len(nums)
+        new=[str(bin(i)[2:]) for i in range(n)]
+        count=0
+        for i in range(len(new)):
+            if k==new[i].count("1"):
+                count+=nums[i]
+        return count
