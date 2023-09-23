@@ -1,0 +1,11 @@
+class Solution:
+    def appendCharacters(self, s: str, t: str) -> int:
+        ind=-1
+        count=0
+        for i in t:
+            ind = s.find(i, ind+1)
+            if ind != -1:
+                count+=1
+            else :
+                break
+        return len(t)-count
