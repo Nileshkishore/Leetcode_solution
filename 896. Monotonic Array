@@ -1,0 +1,10 @@
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        if len(nums)==1:
+            return True
+        else:
+            j=nums[:]
+            j.sort()
+            if nums==j or nums==j[::-1]:
+                return True
+            return False
