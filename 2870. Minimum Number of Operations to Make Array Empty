@@ -1,0 +1,30 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        d={}
+        for i in nums:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+        print(d)
+        count=0
+        for i in d.keys():
+            if d[i]%3==0:
+                count+=(d[i]//3)
+            elif d[i]%2==0:
+                if d[i]%3==1:
+                    j=(d[i]-4)
+                    count+=j//3+2
+                else:
+                    j=d[i]-2
+                    count+=j//3+1
+                
+            else:
+                if d[i]==1:
+                    return -1
+                elif d[i]%5==5:
+                    count+=(d[i]-2)//3 +1
+                else:
+                    count+=(d[i]-4)//3+2
+        return count
+                
