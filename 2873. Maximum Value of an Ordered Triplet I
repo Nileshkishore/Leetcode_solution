@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def maximumTripletValue(self, nums: List[int]) -> int:
+        comb=list(itertools.combinations(nums,3))
+        res=[]
+        for i in comb:
+            res.append((i[0]-i[1])*i[2])
+        res=max(res)
+        return res if res>0 else 0
