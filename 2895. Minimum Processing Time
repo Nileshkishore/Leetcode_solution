@@ -1,0 +1,13 @@
+class Solution:
+    def minProcessingTime(self, processorTime: List[int], tasks: List[int]) -> int:
+        n=len(processorTime)
+        processorTime.sort()
+        tasks.sort(reverse=True)
+        minT=0
+        for i in range(n):
+            for j in range(4):
+                if i*4+j < len(tasks):
+                    minT = max(minT, processorTime[i] + tasks[i*4+j])
+                else:
+                    break
+        return minT
