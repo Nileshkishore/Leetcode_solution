@@ -1,0 +1,9 @@
+import itertools
+class Solution:
+    def minimumSum(self, nums: List[int]) -> int:
+        res=[]
+        comb=list(itertools.combinations(nums,3))
+        for i in comb:
+            if i[0]<i[1] and i[2]<i[1]:
+                res.append(sum(i))
+        return min(res) if res else -1
