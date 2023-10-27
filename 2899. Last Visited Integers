@@ -1,0 +1,16 @@
+class Solution:
+    def lastVisitedIntegers(self, words: List[str]) -> List[int]:
+        res = list()
+        num = list()
+        k = 0
+        for i in words:
+            if i != 'prev':
+                num.append(int(i))
+                k = 0
+            else:
+                k += 1
+                if k > len(num):
+                    res.append(-1)
+                else:
+                    res.append(num[-k])
+        return res
