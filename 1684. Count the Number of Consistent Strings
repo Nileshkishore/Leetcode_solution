@@ -1,0 +1,13 @@
+import itertools
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        
+        res=len(words)
+        for i in words:
+            j=[k for k in i]
+            j=set(j)
+            for r in j:
+                if r not in allowed:
+                    res-=1
+                    break
+        return res
