@@ -1,0 +1,8 @@
+class Solution:
+    def countHomogenous(self, s: str) -> int:
+        res = 0
+        for _, g in groupby(s):
+            n = len(list(g))
+            print(n)
+            res += n * (n + 1) // 2
+        return pow(res,1,10**9+7)
