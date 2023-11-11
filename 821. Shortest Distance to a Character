@@ -1,0 +1,20 @@
+class Solution:
+    def shortestToChar(self, s: str, c: str) -> List[int]:
+        ar=[]
+        n=len(s)
+        for i in range(n):
+            if s[i]==c:
+                ar.append(i)
+        res=[]
+        t=0
+        for i in range(n):
+            if s[i]==c:
+                t+=1
+                res.append(0)
+            elif i <ar[0]:
+                res.append(ar[0]-i)
+            elif i>ar[-1]:
+                res.append(i-ar[-1])
+            else:
+                res.append(min((ar[t]-i), (i-ar[t-1])))
+        return res
