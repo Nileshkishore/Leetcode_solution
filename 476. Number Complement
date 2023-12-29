@@ -1,0 +1,10 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        a=bin(num)[2:]
+        count=0
+        l=len(a)
+        for i in a:
+            if i=='0':
+                count+=1*2**(l-1)
+            l-=1
+        return count
