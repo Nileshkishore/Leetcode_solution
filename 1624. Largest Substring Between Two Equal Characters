@@ -1,0 +1,7 @@
+class Solution:
+    def maxLengthBetweenEqualCharacters(self, s: str) -> int:
+        for i in range(len(s)-1,0,-1):
+            for j in range(len(s)-i):
+                if s[j+i]==s[j]:
+                    return i-1
+        return -1
