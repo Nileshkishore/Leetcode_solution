@@ -1,0 +1,13 @@
+class Solution:
+    def triangleType(self, nums: List[int]) -> str:
+        if max(nums) >= sum(nums)-max(nums):
+            return 'none'
+        
+        n=len(set(nums))
+        
+        if n==1:
+            return 'equilateral'
+        elif n==2:
+            return 'isosceles'
+        else:
+            return 'scalene'
