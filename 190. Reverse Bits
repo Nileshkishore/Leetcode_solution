@@ -1,0 +1,12 @@
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        print(1,n)
+        n=bin(n)
+        j,n=n[:2],n[2:]
+        print(2,type(n))
+        l=len(n)
+        print(l)
+        n=n[::-1]
+        n=j+n+(32-l)*'0'
+        print(3,n)
+        return int(n,2)
