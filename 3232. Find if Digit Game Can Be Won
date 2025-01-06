@@ -1,0 +1,13 @@
+class Solution:
+    def canAliceWin(self, nums: List[int]) -> bool:
+        s=0
+        d=0
+        for i in nums:
+            if i//10 >= 1 :
+                d+=i
+            else:
+                s+=i
+        if s>d or d>s:
+            return True
+        else:
+            return False
