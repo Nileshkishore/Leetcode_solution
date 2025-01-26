@@ -1,0 +1,9 @@
+import pandas as pd
+
+def largest_orders(orders: pd.DataFrame) -> pd.DataFrame:
+    # df=orders.groupby('customer_number').count()
+    # print(df)
+    df=orders
+    df=df[df['order_number'] == df['order_number'].max()]
+    print(df)
+    return df.index.to_frame(name='customer_number')
