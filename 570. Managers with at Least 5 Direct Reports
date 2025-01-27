@@ -1,0 +1,5 @@
+import pandas as pd
+
+def find_managers(employee: pd.DataFrame) -> pd.DataFrame:
+    k=employee.groupby('managerId').count()['id'] >= 5
+    return employee[['name']][employee['id'].isin(k[k].index)]
